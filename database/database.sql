@@ -23,7 +23,7 @@ CREATE PROCEDURE insertPessoas(
 	START TRANSACTION;
 	INSERT INTO pessoas	(pkPessoa, CPF, email, password, dataNascimento)
 	VALUES					(DEFAULT, _CPF, _email, _password, _dataNascimento);
-	
+
 	COMMIT;
 		ROLLBACK;
 
@@ -64,7 +64,6 @@ tipoDaDespesa VARCHAR (100) NOT NULL
 
 INSERT INTO despesas VALUES 
 (DEFAULT, "Lazer"),
-(DEFAULT, "Mensais"),
 (DEFAULT, "Investimentos");
 SELECT * FROM despesas;
 
@@ -136,3 +135,4 @@ FOREIGN KEY (fkCartaoCredito) REFERENCES cartaoCredito(pkCartaoCredito)
 
 INSERT INTO comprasParcelas VALUES(DEFAULT, 1, 1, 0.3, 3, 5);
 SELECT * FROM comprasParcelas;
+
