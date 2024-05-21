@@ -1,0 +1,1 @@
+* models. Pasta destinada a agrupar os modelos de dados disponilizados nesta aplicação.

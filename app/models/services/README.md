@@ -1,0 +1,1 @@
+* Até o momento não sabemos, se implementaremos funções de sistemas externos, como api's ou blibliotecas então esta pasta esta destinada a esse tipo de uso. 
