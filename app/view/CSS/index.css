@@ -91,6 +91,11 @@ input {
     width: 100%;
 }
 
+#signUp:hover{
+    background: #a184f1;
+    border: none;
+}
+
 .container {
     background-color: #fff;
     border-radius: 10px;
