@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="./view/CSS/index.css">
+    <link rel="stylesheet" href="app/view/CSS/index.css">
     <title>Login</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 
     <div class="form-container sign-up-container">
 
-        <form action="" method="POST" id="cadastro">
+        <form action="app/controllers/register/register.php" method="POST" id="cadastro">
 
             <h1>Criar Usuário</h1>
 
@@ -22,28 +22,32 @@
 
             <input type="password" name="password" placeholder="Password" required />
 
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
+            <input type="text" name="CPF" placeholder="CPF" required />
 
-            <button type="submit" form="POST">Criar</button>
+            <input type="date" name="dataNasc" placeholder="01/01/2000" required />
+
+            <?php if(!empty($_GET["status"])){echo "<span>" . $_GET["status"] . "</span>";}?>
+            
+            <button type="submit" form="cadastro">Criar</button>
         </form>
 
     </div>
 
     <div class="form-container sign-in-container">
 
-        <form action="" method="post" id="login">
+        <form action="app/controllers/login/login.php" method="post" id="login">
 
             <h1>Login</h1>
 
-            <span>Use sua conta registrada!</span>
+            <span> Use sua conta registrada! </span>
 
-            <input type="email" name="email" placeholder="Email" required />
+            <input type="email" name="email" placeholder="Email" required/>
 
-            <input type="password" name="password" placeholder="Password" required />
+            <input type="password" name="password" placeholder="Password" required/>
 
-            <a href="#">Esqueceu sua senha?</a>
+            <?php if(!empty($_GET["status"])){echo "<span> email não cadastrado </span>";}?>
 
-            <button type="submit" form="POST">Login</button>
+            <button type="submit" form="login">Login</button>
 
         </form>
 
@@ -75,7 +79,7 @@
     </div>
 </div>
 
-    <script src="./view/JS/index.js"></script>
+    <script src="app/view/JS/index.js"></script>
 </body>
 </html>
 

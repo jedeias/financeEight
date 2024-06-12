@@ -14,12 +14,14 @@ class Mysql{
         $database = DATABASE;
         $user = USER;
         $password = PASSWORD;
+        $port = PORT;
 
         try{
 
             
             $this->connect = new PDO("mysql:host=$host;
-            dbname=$database", 
+            dbname=$database;
+            port=$port", 
             $user, 
             $password);
         }catch(PDOException $error){
@@ -34,6 +36,8 @@ class Mysql{
     function __destruct() {
         $this->connect = null;
     }
-
 }
 
+
+
+$mysql = new Mysql();

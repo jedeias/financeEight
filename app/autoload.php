@@ -3,6 +3,7 @@
 function autoload($className) {
     $directories = array(
         "models" => array(
+            "/session",
             "/pessoas",
             "/bancos",
             "/cartoes",
@@ -15,7 +16,7 @@ function autoload($className) {
             "/repository/cartoes/cartao",
         ),
         "controllers" => array(
-            
+            "/login",
         ),
         "views" => array(
             

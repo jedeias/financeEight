@@ -7,13 +7,20 @@ $pk = (10);
 
 $pessoa->setPkPessoa($pk);
 
-testSave($pessoa);
-testUpdate($pessoa);
-testDelete($pk);
-testGetById($pessoa, $pk);
-testGetAll();
+// testSave($pessoa);
+// testUpdate($pessoa);
+// testDelete($pk);
+// testGetById($pessoa, $pk);
+// testGetAll();
 
+testGetByEmail("teste@test.com");
 
+function testGetByEmail($email){
+    $repository = new RepositoryPessoas();
+
+    $response = $repository->getByEmail($email);
+    print_r($response);
+}
 function testSave($pessoa){
     
     $repository = new RepositoryPessoas();
