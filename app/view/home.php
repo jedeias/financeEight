@@ -1,5 +1,19 @@
+<?php 
+
+include_once ("../autoload.php");
+
+$session = new Session();
+
+$session->validate();
+
+$serializeUser = $session->get("serializeUser");
+
+$user = unserialize($serializeUser);
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +30,7 @@
         <li><a href="#"><i class="fas fa-bell"></i></a></li>
         <li><a href="#"><i class="fa-solid fa-credit-card"></i></a></li>
         <li><a href="#"><i class="fa-solid fa-chart-column"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+        <li><a href="setting/userSetting.php"><i class="fa-solid fa-gear"></i></a></li>
     </ul>
     
 </nav>
