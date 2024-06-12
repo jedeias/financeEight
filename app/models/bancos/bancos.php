@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Bancos {
     private int $pkBancos;
     private string $tipoDaConta;
