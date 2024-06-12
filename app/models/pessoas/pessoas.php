@@ -7,7 +7,6 @@ class Pessoas{
     private string $password;
     private string $dataNascimento;
     
-
     public function __construct() {
         //I will leave the constructor for exclusive dependency injection.
     }

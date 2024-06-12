@@ -55,9 +55,7 @@ class cartoes implements iCartoes{
         return $this->numero;
     }
 
-    public function setNumero(int $numero): self{
+    public function setNumero(int $numero): void{
         $this->numero = $numero;
-
-        return $this;
     }
 }

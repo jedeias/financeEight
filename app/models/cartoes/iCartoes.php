@@ -9,6 +9,6 @@ interface iCartoes{
     public function getValidade(): string;
     public function setValidade(string $validade): self;
     public function getNumero(): int;
-    public function setNumero(int $numero): self;
+    public function setNumero(int $numero): void;
     
 }

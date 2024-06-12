@@ -1,6 +1,6 @@
 -- DROP DATABASE financeEight;
 
-CREATE DATABASE financeEight CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS financeEight CHARACTER SET utf8;
 
 USE financeEight;
 
@@ -136,3 +136,18 @@ FOREIGN KEY (fkCartaoCredito) REFERENCES cartaoCredito(pkCartaoCredito)
 INSERT INTO comprasParcelas VALUES(DEFAULT, 1, 1, 0.3, 3, 5);
 SELECT * FROM comprasParcelas;
 
+DELIMITER $$
+
+CREATE PROCEDURE insertDespesas(
+	IN _pk INT,
+	IN _tipoDespesa VARCHAR(100)
+)BEGIN
+	START TRANSACTION;
+	INSERT INTO despesas 	(pkDespesas, tipoDaDespesa)
+	VALUES					(DEFAULT, _tipoDespesa);
+
+	COMMIT;
+		ROLLBACK;
+
+END $$
+DELIMITER ;
