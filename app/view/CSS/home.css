@@ -7,6 +7,8 @@
     transition: all 0.2s linear;
 }
 
+
+
 :root{
     --box-color:rgba(117,129,236,1);
 }
@@ -15,11 +17,11 @@ nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: 110vh;
+    height: 100vh;
 }
 
 nav ul{
-    padding-top: 10%;  
+    padding-top: 25%;  
 }
 
 nav ul li{
@@ -43,7 +45,7 @@ nav ul li:hover{
 }
 
 nav ul li:nth-child(6){
-    padding-top: 300px;
+    padding-top: 200px;
     background: none;
     text-align: center;
 }

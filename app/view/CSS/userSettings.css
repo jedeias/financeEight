@@ -64,7 +64,9 @@ button{
     transition: transform 80ms ease-in;
     transition: all 0.5s linear;
     padding: 15px;
+    padding-top: 15px;
     border: none;
+    margin-top: 15px;
 }
 
 button:hover{

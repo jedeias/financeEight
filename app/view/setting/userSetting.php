@@ -11,17 +11,31 @@ $serializeUser = $session->get("serializeUser");
 $user = unserialize($serializeUser);
 
 if($_POST){
-    
-    $repositoryPessoas = new RepositoryPessoas();
 
-    $user->setEmail($_POST["email"]);
-    $user->setPassword($_POST["password"]);
-    $user->setCpf($_POST["CPF"]);
-    $user->setDataNascimento($_POST["dataNasc"]);
+    if($_POST["method"] == "update"){
+        $repositoryPessoas = new RepositoryPessoas();
 
-    $repositoryPessoas->update($user);
+        $user->setEmail($_POST["email"]);
+        $user->setPassword($_POST["password"]);
+        $user->setCpf($_POST["CPF"]);
+        $user->setDataNascimento($_POST["dataNasc"]);
+
+        $repositoryPessoas->update($user);
+    }else if($_POST["method"] == "delete"){
+        $repositoryPessoas = new RepositoryPessoas();
+
+        $teste = $repositoryPessoas->delete($user->getPkPessoa());
+
+        $session->destroy();
+
+        
+        $url = "http://localhost/financeEight";
+        
+        header("Location: $url");
+    }
 
 }
+
 
 ?>
 
@@ -47,9 +61,14 @@ if($_POST){
 
             <input type="date" name="dataNasc" placeholder="01/01/2000" <?php echo "value='{$user->getDataNascimento()}'" ?> required />
 
-            <button type="submit" from="userUpdate">Enviar</button>
-                
+            
+            <input type="submit" value="update" name="method">
+        </form>
+
+        <form action="" method="post" id="userDelete">
+            <input type="submit" name="method" value="delete">
         </form>
     </div>
+
 </body>
 </html>
