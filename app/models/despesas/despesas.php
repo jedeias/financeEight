@@ -1,6 +1,8 @@
 <?php
 
-class Despesas{
+require_once ("iDespesas.php");
+
+class Despesas implements iDespesas {
     private int $pkDespesa;
     private string $tipoDaDespesa;
 
