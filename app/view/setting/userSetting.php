@@ -30,21 +30,26 @@ if($_POST){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/userSettings.css">
     <title>Setting</title>
 </head>
 <body>
-    <form action="" method="post" id="userUpdate">
+    <div class="container">
+        <form action="" method="post" id="userUpdate">
 
-        <input type="email" name="email" <?php echo "value='{$user->getEmail()}'" ?> placeholder="Email" required />
+            <h1 class="title">Atualização de Usuario</h1>
 
-        <input type="password" name="password" <?php echo "value='{$user->getPassword()}'" ?> placeholder="Password" required />
+            <input type="email" name="email" <?php echo "value='{$user->getEmail()}'" ?> placeholder="Email" required />
 
-        <input type="text" name="CPF" placeholder="CPF" <?php echo "value='{$user->getCpf()}'" ?> required />
+            <input type="password" name="password" <?php echo "value='{$user->getPassword()}'" ?> placeholder="Password" required />
 
-        <input type="date" name="dataNasc" placeholder="01/01/2000" <?php echo "value='{$user->getDataNascimento()}'" ?> required />
+            <input type="text" name="CPF" placeholder="CPF" <?php echo "value='{$user->getCpf()}'" ?> required />
 
-        <button type="submit" from="userUpdate">Enviar</button>
-            
-    </form>
+            <input type="date" name="dataNasc" placeholder="01/01/2000" <?php echo "value='{$user->getDataNascimento()}'" ?> required />
+
+            <button type="submit" from="userUpdate">Enviar</button>
+                
+        </form>
+    </div>
 </body>
 </html>

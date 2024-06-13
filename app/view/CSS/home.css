@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    transition: all 0.5s linear;
+    transition: all 0.2s linear;
 }
 
 :root{
@@ -39,13 +39,20 @@ nav ul li a:hover{
 }
 
 nav ul li:hover{
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
+}
+
+nav ul li:nth-child(6){
+    padding-top: 300px;
+    background: none;
+    text-align: center;
 }
 
 nav ul li:last-child{
-    padding-top: 300px;
+    padding-top: 50px;
     border: none;
     background: none;
+    text-align: center;
 }
 
 
