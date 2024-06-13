@@ -15,11 +15,11 @@ nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: 100vh;
+    height: 110vh;
 }
 
 nav ul{
-    padding-top: 25%;  
+    padding-top: 10%;  
 }
 
 nav ul li{
@@ -61,6 +61,7 @@ nav ul li:last-child{
     width: 60%;
     height: 650px;
     position: absolute;
+    overflow: scroll;
     left: 60%;
     top: 50%;
     transform: translate(-60%,-50%);
