@@ -2,6 +2,8 @@
 
 require_once (dirname(__DIR__) . "/mysql.php");
 
+require_once ("iRepositoryCartoes.php");
+
 class RepositoryCartoes{
 
     private $mysql;
