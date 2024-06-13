@@ -1,9 +1,8 @@
 <?php
 
+require_once("iBancos.php");
 
-
-
-class Bancos {
+class Bancos implements iBancos {
     private int $pkBancos;
     private string $tipoDaConta;
     private string $saldo;
@@ -11,9 +10,9 @@ class Bancos {
 
     public function __construct() {
         //only dependency injection
-    }
+    } 
 
-    public static function construct($tipoDaConta, $saldo, $fonteDeRenda): Bancos{
+   public static function construct($tipoDaConta, $saldo, $fonteDeRenda): Bancos{
         $banco = new Bancos();
         $banco->setTipoDaConta($tipoDaConta);
         $banco->setSaldo($saldo);
