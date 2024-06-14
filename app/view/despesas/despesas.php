@@ -17,7 +17,7 @@ $despesas = $repository->getAll();
 
 function showListDespesas($despesas){
 
-    echo "<div class='red'><p> {$despesas["tipoDaDespesa"]} </p> <form action='' method='post' class='crash'> <input type='text' name='delete' value='{$despesas["pkDespesa"]}' > <input type='submit' value='Enviar'> </form> <i class='fa-solid fa-trash delete' ></i> <i class='fa-solid fa-pen'></i> </div>";
+    echo "<div class='_{$despesas["tipoDaDespesa"]}'><p>{$despesas["tipoDaDespesa"]} </p> <form action='' method='post' class='crash'> <input type='text' name='delete' value='{$despesas["pkDespesa"]}' > <input type='submit' value='Enviar'> </form> <i class='fa-solid fa-trash delete' ></i> <i class='fa-solid fa-pen'></i> </div>";
     
 }
 

@@ -1,8 +1,10 @@
 <?php
 
-require_once (dirname(__DIR__) . "/mysql.php");
+require_once ("../mysql.php");
 
-class RepositoryPessoas{
+require_once ("iRepositoryPessoas.php");
+
+class RepositoryPessoas implements iRepositoryPessoas{
 
     private $mysql;
 
