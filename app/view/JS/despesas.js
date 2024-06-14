@@ -17,4 +17,7 @@ $(function(){
     $(".delete").click(function(){
         $(".crash").toggle(500);
     })
+    $("#add").click(function(){
+      $(".form-container").toggle(500)
+    })
 })

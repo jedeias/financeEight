@@ -62,11 +62,11 @@ if($_POST){
             <input type="date" name="dataNasc" placeholder="01/01/2000" <?php echo "value='{$user->getDataNascimento()}'" ?> required />
 
             
-            <input type="submit" value="update" name="method">
+            <input class="button" type="submit" value="update" name="method">
         </form>
 
         <form action="" method="post" id="userDelete">
-            <input type="submit" name="method" value="delete">
+            <input type="submit" name="method" value="delete" class="delete">
         </form>
     </div>
 
