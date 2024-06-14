@@ -35,6 +35,33 @@ body{
     color: #fff;
 }
 
+#userDelete{
+    position: absolute;
+    height: 0;
+    top: 820px;
+    width: 100%;
+}
+#userDelete .delete{
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    background: #9F80F8;
+    color: #fff;
+    font-size: 14px;
+    transition: transform 80ms ease-in;
+    transition: all 0.5s linear;
+    padding: 15px;
+    padding-top: 15px;
+    border: none;
+    margin-bottom: 650px;
+
+}
+
+.delete:hover{
+    box-shadow: 0.5rem 0.8rem 0.5rem #4d378a;
+    background: #a184f1;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -54,7 +81,7 @@ input{
     width: 100%;
 }
 
-button{
+.button{
     border-radius: 7px;
     width: 100%;
     cursor: pointer;
@@ -69,7 +96,7 @@ button{
     margin-top: 15px;
 }
 
-button:hover{
+.button:hover{
     box-shadow: 0.5rem 0.8rem 0.5rem #4d378a;
     background: #a184f1;
 }
