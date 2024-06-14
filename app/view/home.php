@@ -29,7 +29,7 @@ $user = unserialize($serializeUser);
         <li><a href="#" class="li"><i class="fas fa-user"></i></a></li>
         <li><a href="#" class="li"><i class="fas fa-bell"></i></a></li>
         <li><a href="#" class="li"><i class="fa-solid fa-credit-card"></i></a></li>
-        <li><a href="#" class="li"><i class="fa-solid fa-chart-column"></i></a></li>
+        <li><a href="despesas/despesas.php" class="li"><i class="fa-solid fa-chart-column"></i></a></li>
         <li><a href="setting/userSetting.php" class="li"><i class="fa-solid fa-gear"></i></a></li>
         <li><a href="#" class="li"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
     </ul>

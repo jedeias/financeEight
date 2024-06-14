@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+
+:root{
+    --box-color:rgba(117,129,236,1);
+}
+
+nav{
+    background-color: var(--box-color);
+    filter: blur(0.4px);
+    width: 15%;
+    height: 110vh;
+}
+
+nav ul{
+    padding-top: 25%;  
+}
+
+nav ul li{
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 1px solid #000;
+}
+
+nav ul li a{
+    color: #fff;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+    color: #000;
+}
+
+nav ul li:hover{
+    background: rgba(0,0,0,0.3);
+}
+
+nav ul li:nth-child(6){
+    padding-top: 200px;
+    background: none;
+    text-align: center;
+}
+
+nav ul li:last-child{
+    padding-top: 50px;
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    width: 70%;
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+}
+
+.title{
+    margin-bottom: 40%;
+    font-size: 44px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #000;
+}
+
+p{
+    font-size: 24px;
+    position: absolute;
+}
+
+.container i{
+    font-size: 30px;
+    color: #fff;
+    position: relative;
+    left: 90%;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.4s linear;
+}
+
+.container i:hover{
+    color: #000;
+}
+
+.red{
+    background-color: rgba(254, 101, 101, 1);
+    width: 100%;    
+    padding: 55px;
+    border-radius: 12px;
+}
+
+.crash{
+    position: fixed;
+    left: 40%;
+    top: 67%;
+    width: 22%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+
+.blue{
+    background-color: rgba(54, 243, 255, 1);
+    width: 100%;
+    padding: 55px;
+    border-radius: 12px;
+}
+
+.brown{
+    background-color: rgba(184, 155, 100, 1);
+    width: 100%;
+    padding: 55px;
+    border-radius: 12px;
+}
+
+.active{
+    color: blue;
+}
