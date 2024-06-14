@@ -1,6 +1,8 @@
 <?php 
 
-include_once "c:/laragon/www/financeEight/app/autoload.php";
+// include_once "c:/laragon/www/financeEight/app/autoload.php";
+
+include_once "../../autoload.php";
 
 class login{
     

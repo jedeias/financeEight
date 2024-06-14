@@ -2,7 +2,6 @@
 
 require_once ("iPessoas.php");
 
-
 class Pessoas{
     private int $pkPessoa;
     private string $cpf;
