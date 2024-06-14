@@ -17,11 +17,12 @@ nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: 100vh;
+    height: auto;
 }
 
 nav ul{
     padding-top: 25%;  
+    height: 100vh;
 }
 
 nav ul li{
