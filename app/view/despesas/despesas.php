@@ -76,8 +76,6 @@ function showListDespesas($despesas){
 }
 if($_POST){
 
-    print_r($_POST);
-
     if($_POST["method"] == "delete"){
     
         $repository->delete($_POST["key"]);
@@ -136,10 +134,10 @@ if($_POST){
 
     
 
-    
+    <i id="add" class="fa-solid fa-circle-plus"></i>
 </nav>
 
-<i id="add" class="fa-solid fa-circle-plus"></i>
+
 
 <div class="container">
     <h1 class="title">Despesas</h1>
@@ -153,7 +151,8 @@ if($_POST){
         <input type="text" id="crearDespesas" name="despesa">
         <input type="submit" name="method" value="create">
     </form>
-
+    <div class="desc"></div>
+    
 </div>
 
     

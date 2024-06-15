@@ -1,6 +1,6 @@
 <?php
 
-require_once ("session\ISession.php");
+require_once ("ISession.php");
 
 
 class Session implements ISession{

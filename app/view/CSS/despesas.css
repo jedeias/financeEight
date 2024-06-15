@@ -10,11 +10,15 @@
     --box-color:rgba(117,129,236,1);
 }
 
+body{
+    background: rgba(253, 251, 251, 0.1);
+}
+
 nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: 110vh;
+    height: 100vh;
 }
 
 nav ul{
@@ -57,16 +61,81 @@ nav ul li:last-child{
 .container{
     display: flex;
     flex-direction: column;
-    gap: 150px;
-    width: 70%;
+    gap: 50px;
+    width: 80%;
+    height: 90%;
     position: absolute;
-    top: 10%;
-    left: 55%;
+    top: 52%;
+    left: 58%;
     transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.1);
+    overflow: scroll;
+}
+
+#formNew{
+    width: 22%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: rgba(117,129,236,1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0.5rem 0.5rem 0.5rem #000;
+    display: none;
+    z-index: 999;
+}
+
+.desc{
+    display: none;
+    width: 100%;
+    height: 110vh;
+    background-color:rgba(0,0,0,0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+#formNew label{
+    color: #fff;
+}
+
+#formNew input{
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+#formNew input[type="submit"]{
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    background: #9F80F8;
+    color: #fff;
+    font-size: 14px;
+    transition: transform 80ms ease-in;
+    transition: all 0.5s linear;
+    padding: 15px;
+    padding-top: 15px;
+    border: none;
+    margin-top: 15px;
+}
+
+#formNew input[type="submit"]:hover{
+    background: #816dbb;
+    border: none;
+    box-shadow: 0.5rem 0.5rem 0.5rem #838181;
 }
 
 .title{
-    margin-bottom: 40%;
     font-size: 44px;
     width: 100%;
     text-align: center;
@@ -74,7 +143,7 @@ nav ul li:last-child{
 }
 
 p{
-    font-size: 24px;
+    font-size: 39px;
     position: absolute;
 }
 
@@ -84,8 +153,8 @@ p{
     position: relative;
     left: 90%;
     cursor: pointer;
-    margin-left: 15px;
     transition: all 0.4s linear;
+    padding-top: 15px;
 }
 
 .container i:hover{
@@ -94,27 +163,59 @@ p{
 
 .red{
     background-color: rgba(254, 101, 101, 1);
-    width: 100%;    
+    width: 90%;    
     padding: 55px;
     border-radius: 12px;
+    margin: 0 auto;
 }
 
 .crashblue{
     position: fixed;
     left: 40%;
-    top: 65%;
+    top: 14%;
     width: 22%;
     padding: 20px;
     border: none;
     outline: none;
     border-radius: 12px;
     background-color: rgba(0,0,0,0.5);
+}
+
+.crashblue input{
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.crashblue input[type="submit"]{
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    background: #9F80F8;
+    color: #fff;
+    font-size: 14px;
+    transition: transform 80ms ease-in;
+    transition: all 0.5s linear;
+    padding: 15px;
+    padding-top: 15px;
+    border: none;
+    margin-top: 15px;
+}
+
+.crashblue input[type="submit"]:hover{
+    background: #816dbb;
+    border: none;
+    box-shadow: 0.5rem 0.5rem 0.5rem #838181;
 }
 
 .crashred{
     position: fixed;
     left: 40%;
-    top: 90%;
+    top: 43.5%;
     width: 22%;
     padding: 20px;
     border: none;
@@ -123,24 +224,54 @@ p{
     background-color: rgba(0,0,0,0.5);
 }
 
+.crashred input{
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.crashred input[type="submit"]{
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    background: #9F80F8;
+    color: #fff;
+    font-size: 14px;
+    transition: transform 80ms ease-in;
+    transition: all 0.5s linear;
+    padding: 15px;
+    padding-top: 15px;
+    border: none;
+    margin-top: 15px;
+}
+
+.crashred input[type="submit"]:hover{
+    background: #816dbb;
+    border: none;
+    box-shadow: 0.5rem 0.5rem 0.5rem #838181;
+}
+
 #add{
     font-size: 34px;
+    cursor: pointer;
+    
 }
 
 
 .blue{
-    background-color: rgba(54, 243, 255, 1);
-    width: 100%;
+    background-color: rgb(40, 68, 226);
+    width: 90%;
     padding: 55px;
     border-radius: 12px;
+    margin: 0 auto;
+
 }
 
-/* .brown{
-    background-color: rgba(184, 155, 100, 1);
-    width: 100%;
-    padding: 55px;
-    border-radius: 12px;
-} */
+
 
 .active{
     color: blue;

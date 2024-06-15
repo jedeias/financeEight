@@ -24,5 +24,6 @@ $(function(){
 
     $("#add").click(function (){
       $("#formNew").toggle(500);
+      $(".desc").toggle(500);
     })
 })
