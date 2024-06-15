@@ -14,12 +14,11 @@ nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: auto;
+    height: 110vh;
 }
 
 nav ul{
     padding-top: 25%;  
-    height: 100vh;
 }
 
 nav ul li{
@@ -55,56 +54,23 @@ nav ul li:last-child{
     text-align: center;
 }
 
-
-.form-container {
-    background-color: rgba(0,0,0,0.1);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    width: 70%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+    top: 10%;
+    left: 55%;
+    transform: translate(-50%,-50%);
 }
-.form-container h2 {
-    margin-bottom: 20px;
+
+.title{
+    margin-bottom: 40%;
+    font-size: 44px;
+    width: 100%;
     text-align: center;
-}
-.form-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-.form-container input, .form-container select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-.form-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--box-color);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.form-container button:hover {
-    background-color: rgb(79, 85, 139);
-}
-
-#add{
-    width: 100%;
-    text-align: end;
-    font-size:38px;
-    position: absolute;
-    bottom: 1%;
-    cursor: pointer;
+    border-bottom: 3px solid #000;
 }
 
 p{
@@ -126,11 +92,17 @@ p{
     color: #000;
 }
 
+.red{
+    background-color: rgba(254, 101, 101, 1);
+    width: 100%;    
+    padding: 55px;
+    border-radius: 12px;
+}
 
-.crash{
+.crashblue{
     position: fixed;
     left: 40%;
-    top: 67%;
+    top: 65%;
     width: 22%;
     padding: 20px;
     border: none;
@@ -139,8 +111,36 @@ p{
     background-color: rgba(0,0,0,0.5);
 }
 
+.crashred{
+    position: fixed;
+    left: 40%;
+    top: 90%;
+    width: 22%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#add{
+    font-size: 34px;
+}
 
 
+.blue{
+    background-color: rgba(54, 243, 255, 1);
+    width: 100%;
+    padding: 55px;
+    border-radius: 12px;
+}
+
+/* .brown{
+    background-color: rgba(184, 155, 100, 1);
+    width: 100%;
+    padding: 55px;
+    border-radius: 12px;
+} */
 
 .active{
     color: blue;

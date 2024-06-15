@@ -14,10 +14,15 @@ for (var i = 0; i < btns.length; i++) {
 
 
 $(function(){
-    $(".delete").click(function(){
-        $(".crash").toggle(500);
+    $(".deleteblue").click(function(){
+        $(".crashblue").toggle(500);
     })
-    $("#add").click(function(){
-      $(".form-container").toggle(500)
+
+    $(".deletered").click(function(){
+        $(".crashred").toggle(500);
+    })
+
+    $("#add").click(function (){
+      $("#formNew").toggle(500);
     })
 })

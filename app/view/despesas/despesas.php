@@ -13,17 +13,102 @@ $user = unserialize($serializeUser);
 
 $repository = new RepositoryDespesas;
 
-$despesas = $repository->getAll();
-
+$despesasData = $repository->getAll();
 
 function showListDespesas($despesas){
 
-    //echo "<div class='red'><p> {$despesas["tipoDaDespesa"]} </p> <form action='' method='post' class='crash'> <input type='text' name='delete' value='{$despesas["pkDespesa"]}' > <input type='submit' value='Enviar'> </form> <i class='fa-solid fa-trash delete' ></i> <i class='fa-solid fa-pen'></i> </div>";
+    if($despesas["pkDespesa"] % 2 == 0){
+
+        echo "<div class='red'>
+
+        <p> {$despesas["tipoDaDespesa"]} </p> 
+
+            <form action='' method='post' class='crashred'> 
+                <input type='hidden' name='key' value='{$despesas["pkDespesa"]}'}> 
+                <input type='text' name='novaDespesa'>
+                <input type='submit' name='method' value='update'>
+            </form> 
+        
+            <form action='' method='post' class='trash'>
+                <label for='btnDelete{$despesas['pkDespesa']}'>
+                    <i class='fa-solid fa-trash' ></i>
+                </label>
+
+                <input type='hidden' name='key' value='{$despesas['pkDespesa']}'>
+                <input hidden type='submit' id='btnDelete{$despesas['pkDespesa']}' name='method' value='delete'>
+            
+            </form>
+
+            <form action='' method='post' class='pen'>
+                <i class='fa-solid fa-pen deletered'></i>
+            </form>
+
+    </div>";
+    
+    }else{
+        echo "<div class='blue'>
+
+                <p> {$despesas["tipoDaDespesa"]} </p> 
+
+                <form action='' method='post' class='crashblue'> 
+                    <input type='hidden' name='key' value='{$despesas["pkDespesa"]}'}> 
+                    <input type='text' name='novaDespesa'>
+                    <input type='submit' name='method' value='update'>
+                </form> 
+                
+                    <form action='' method='post' class='trash'>
+                        <label for='btnDelete{$despesas['pkDespesa']}'>
+                            <i class='fa-solid fa-trash'></i>
+                        </label>
+                            <input type='hidden' name='key' value='{$despesas['pkDespesa']}'>
+                            <input hidden type='submit' id='btnDelete{$despesas['pkDespesa']}' name='method' value='delete'>
+
+                        
+                    </form>
+
+                    <form action='' method='post' class='pen'>
+                        <i class='fa-solid fa-pen deleteblue'></i>
+                    </form>
+
+            </div>";
+        
+    }
+
     
 }
 
 if($_POST){
 
+    print_r($_POST);
+
+    if($_POST["method"] == "delete"){
+    
+        $repository->delete($_POST["key"]);
+
+        // echo "<span> DELETE {$_POST["key"]}</span>";
+
+        header("Refresh: 0");
+    
+    }else if($_POST["method"] == "update"){
+
+        $despesas = Despesas::construct($_POST["novaDespesa"]);
+        
+        $despesas->setPkDespesa($_POST["key"]);
+
+        $repository->update($despesas); 
+        
+        header("Refresh: 0");
+        // echo "<span> UPDATE {$_POST["key"]}</span>";
+    
+    }else if($_POST["method"] == "create"){
+
+        $despesas = Despesas::construct($_POST["despesa"]);
+
+        $repository->save($despesas); 
+        
+        header("Refresh: 0");
+    
+    }
 
 }
 
@@ -41,6 +126,7 @@ if($_POST){
 <body>
 
 <nav>
+
     <ul id="menu">
         <li><a href="../home.php" class="li"><i class="fas fa-home"></i></a></li>
         <li><a href="#" class="li"><i class="fas fa-user"></i></a></li>
@@ -58,39 +144,19 @@ if($_POST){
 
 <i id="add" class="fa-solid fa-circle-plus"></i>
 
-<div class="form-container">
-    <h2>Adicionar Despesa</h2>
-
-    <form action="" method="POST">
-       
-
-        <label for="descricao">Descrição:</label>
-
-        <input type="text" id="descricao" name="descricao" required>
-
-        <label for="valor">Valor:</label>
-
-        <input type="number" id="valor" name="valor" step="0.01" required>
-
-        <label for="categoria">Categoria:</label>
-
-        <select id="categoria" name="categoria" required>
-            <option value="">Selecione</option>
-            <option value="red" style="background-color: rgba(254, 101, 101, 1);">Red</option>
-            <option value="blue" style="background-color: rgba(54, 243, 255, 1);">Blue</option>
-            <option value="green" style="background-color: rgba(167, 255, 136, 1);">Green</option>
-            <option value="Brown" style="background-color: rgba(184, 155, 100, 1);">Brown</option>
-            <option value="purple" style="background-color: rgba(117,129,236,1);">Purple</option>
-            <option value="black" style="background-color: rgb(0,0,0); color:#fff;">Black</option>
-            <option value="magent" style="background-color: rgba(153, 15, 146, 0.774);">Magenta</option>
-        </select>
-
-        <button type="submit">Adicionar Despesa</button>
-    </form>
-  
+<div class="container">
+    <h1 class="title">Despesas</h1>
+    
     <?php
-        array_map("showListDespesas", $despesas);
+        array_map("showListDespesas", $despesasData);
     ?>
+
+    <form action="" method="POST" id="formNew">
+        <label for="crearDespesas">Nova despesa</label>
+        <input type="text" id="crearDespesas" name="despesa">
+        <input type="submit" name="method" value="create">
+    </form>
+
 </div>
 
     
