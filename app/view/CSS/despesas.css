@@ -18,7 +18,7 @@ nav{
     background-color: var(--box-color);
     filter: blur(0.4px);
     width: 15%;
-    height: 100vh;
+    height: 105vh;
 }
 
 nav ul{
@@ -63,13 +63,14 @@ nav ul li:last-child{
     flex-direction: column;
     gap: 50px;
     width: 80%;
-    height: 90%;
+    height: 98%;
     position: absolute;
     top: 52%;
     left: 58%;
     transform: translate(-50%,-50%);
     background: rgba(0,0,0,0.1);
     overflow: scroll;
+    
 }
 
 #formNew{
@@ -170,15 +171,19 @@ p{
 }
 
 .crashblue{
-    position: fixed;
-    left: 40%;
-    top: 14%;
     width: 22%;
     padding: 20px;
     border: none;
     outline: none;
     border-radius: 12px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgb(40, 68, 226);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0.5rem 0.5rem 0.5rem #000;
+    display: none;
+    z-index: 999;
 }
 
 .crashblue input{
@@ -213,15 +218,19 @@ p{
 }
 
 .crashred{
-    position: fixed;
-    left: 40%;
-    top: 43.5%;
     width: 22%;
     padding: 20px;
     border: none;
     outline: none;
     border-radius: 12px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(254, 101, 101, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0.5rem 0.5rem 0.5rem #000;
+    display: none;
+    z-index: 999;
 }
 
 .crashred input{
@@ -258,7 +267,11 @@ p{
 #add{
     font-size: 34px;
     cursor: pointer;
-    
+    color: #fff;
+}
+
+#add:hover{
+    color: #000;
 }
 
 
@@ -275,4 +288,8 @@ p{
 
 .active{
     color: blue;
+}
+
+.pen{
+    z-index: 999;
 }

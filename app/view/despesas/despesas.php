@@ -40,7 +40,7 @@ function showListDespesas($despesas){
             </form>
 
             <form action='' method='post' class='pen'>
-                <i class='fa-solid fa-pen deletered'></i>
+                <i class='fa-solid fa-pen {$despesas['pkDespesa']} deletered'></i>
             </form>
 
     </div>";
@@ -49,8 +49,8 @@ function showListDespesas($despesas){
         echo "<div class='blue'>
 
                 <p> {$despesas["tipoDaDespesa"]} </p> 
-
-                <form action='' method='post' class='crashblue'> 
+                <span hidden id='primaryKey'>{$despesas["pkDespesa"]}</span>
+                <form action='' method='post' class='crashblue {$despesas["pkDespesa"]} '> 
                     <input type='hidden' name='key' value='{$despesas["pkDespesa"]}'}> 
                     <input type='text' name='novaDespesa'>
                     <input type='submit' name='method' value='update'>
@@ -67,7 +67,10 @@ function showListDespesas($despesas){
                     </form>
 
                     <form action='' method='post' class='pen'>
-                        <i class='fa-solid fa-pen deleteblue'></i>
+                        <label for='update{$despesas['pkDespesa']}'>
+                            <i class='fa-solid fa-pen deleteblue'></i>
+                        </label>
+                        
                     </form>
 
             </div>";
@@ -130,11 +133,13 @@ if($_POST){
         <li><a href="#" class="li active" ><i class="fa-solid fa-chart-column"></i></a></li>
         <li><a href="../setting/userSetting.php" class="li"><i class="fa-solid fa-gear"></i></a></li>
         <li><a href="#" class="li"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+        <li><i id="add" class="fa-solid fa-circle-plus"></i></li>
     </ul>
 
     
 
-    <i id="add" class="fa-solid fa-circle-plus"></i>
+    
+    
 </nav>
 
 
@@ -160,4 +165,3 @@ if($_POST){
 <script src="../JS/despesas.js"></script>
 </body>
 </html>
-
