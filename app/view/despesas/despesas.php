@@ -73,10 +73,7 @@ function showListDespesas($despesas){
             </div>";
         
     }
-
-    
 }
-
 if($_POST){
 
     print_r($_POST);
@@ -164,3 +161,4 @@ if($_POST){
 <script src="../JS/despesas.js"></script>
 </body>
 </html>
+

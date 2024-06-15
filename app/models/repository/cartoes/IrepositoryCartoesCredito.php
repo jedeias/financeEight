@@ -1,6 +1,6 @@
 <?php
 
-interface IrepositoryCartoesCredito{
+interface iRepositoryCartoesCredito{
 
     public function getById(int $id);
 

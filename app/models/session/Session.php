@@ -1,6 +1,6 @@
 <?php
 
-require_once (dirname(__DIR__) . "\session\ISession.php");
+require_once ("session\ISession.php");
 
 
 class Session implements ISession{
