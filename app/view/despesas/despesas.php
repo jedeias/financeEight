@@ -16,74 +16,73 @@ $repository = new RepositoryDespesas;
 $despesasData = $repository->getAll();
 
 function showListDespesas($despesas){
-
-    if($despesas["pkDespesa"] % 2 == 0){
-
-        echo "<div class='red'>
+    $id = $despesas["pkDespesa"];
+    if($id % 2 == 0){
+        echo "<div class='red' id='item-$id'>
 
         <p> {$despesas["tipoDaDespesa"]} </p> 
 
-            <form action='' method='post' class='crashred'> 
-                <input type='hidden' name='key' value='{$despesas["pkDespesa"]}'}> 
+            <form action='' method='post' class='crashred' id='form-$id'> 
+                <input type='hidden' name='key' value='$id'> 
                 <input type='text' name='novaDespesa'>
                 <input type='submit' name='method' value='update'>
             </form> 
         
             <form action='' method='post' class='trash'>
-                <label for='btnDelete{$despesas['pkDespesa']}'>
-                    <i class='fa-solid fa-trash' ></i>
+                <label for='btnDelete$id'>
+                    <i class='fa-solid fa-trash'></i>
                 </label>
 
-                <input type='hidden' name='key' value='{$despesas['pkDespesa']}'>
-                <input hidden type='submit' id='btnDelete{$despesas['pkDespesa']}' name='method' value='delete'>
+                <input type='hidden' name='key' value='$id'>
+                <input hidden type='submit' id='btnDelete$id' name='method' value='delete'>
             
             </form>
 
             <form action='' method='post' class='pen'>
-                <i class='fa-solid fa-pen {$despesas['pkDespesa']} deletered'></i>
+                <i class='fa-solid fa-pen deletered' data-id='$id'></i>
             </form>
 
     </div>";
     
     }else{
-        echo "<div class='blue'>
+        echo "<div class='blue' id='item-$id'>
 
                 <p> {$despesas["tipoDaDespesa"]} </p> 
-                <span hidden id='primaryKey'>{$despesas["pkDespesa"]}</span>
-                <form action='' method='post' class='crashblue {$despesas["pkDespesa"]} '> 
-                    <input type='hidden' name='key' value='{$despesas["pkDespesa"]}'}> 
+
+                <form action='' method='post' class='crashblue' id='form-$id'> 
+                    <input type='hidden' name='key' value='$id'> 
                     <input type='text' name='novaDespesa'>
                     <input type='submit' name='method' value='update'>
                 </form> 
                 
                     <form action='' method='post' class='trash'>
-                        <label for='btnDelete{$despesas['pkDespesa']}'>
+                        <label for='btnDelete$id'>
                             <i class='fa-solid fa-trash'></i>
                         </label>
-                            <input type='hidden' name='key' value='{$despesas['pkDespesa']}'>
-                            <input hidden type='submit' id='btnDelete{$despesas['pkDespesa']}' name='method' value='delete'>
+                            <input type='hidden' name='key' value='$id'>
+                            <input hidden type='submit' id='btnDelete$id' name='method' value='delete'>
 
                         
                     </form>
 
                     <form action='' method='post' class='pen'>
-                        <label for='update{$despesas['pkDespesa']}'>
-                            <i class='fa-solid fa-pen deleteblue'></i>
-                        </label>
-                        
+                        <i class='fa-solid fa-pen deleteblue' data-id='$id'></i>
                     </form>
 
             </div>";
-        
     }
 }
+
+
 if($_POST){
+
+    echo "<pre>";
+        print_r($_POST);
+    echo "</pre>";
 
     if($_POST["method"] == "delete"){
     
         $repository->delete($_POST["key"]);
-
-        // echo "<span> DELETE {$_POST["key"]}</span>";
 
         header("Refresh: 0");
     
@@ -96,7 +95,6 @@ if($_POST){
         $repository->update($despesas); 
         
         header("Refresh: 0");
-        // echo "<span> UPDATE {$_POST["key"]}</span>";
     
     }else if($_POST["method"] == "create"){
 

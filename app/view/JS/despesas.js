@@ -12,49 +12,21 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-// function update(key){
-//   var form = document.createElement("form");
-//   form.method = "POST";
-
-//   btnSend = document.createElement("button");
-//   btnSend.method = "submit";
-
-  
-//   input = document.createElement("input");
-//   input.className = "pen";
-
-//   i = document.createElement("i");
-
-//   i.innerHTML = "<i class='fa-solid fa-pen"+key+"'></i>"
-
-
-//   form.appendChild(input);
-//   form.appendChild(btnSend);
-
-
-// }
-
-
-
-
 $(function(){
+  $(".deleteblue").click(function(){
+      var id = $(this).data('id');
+      $("#form-" + id).toggle(500);
+      $(".desc").toggle(500);
+  });
 
+  $(".deletered").click(function(){
+      var id = $(this).data('id');
+      $("#form-" + id).toggle(500);
+      $(".desc").toggle(500);
+  });
 
-    $(".deleteblue").click(function(){
-        $(".crashblue").toggle(500);
-        $(".desc").toggle(500);
-    })
-
-    $(".deletered").click(function(){
-        $(".crashred").toggle(500);
-        $(".desc").toggle(500);
-    })
-
-    $("#add").click(function (){
+  $("#add").click(function (){
       $("#formNew").toggle(500);
       $(".desc").toggle(500);
-    })
-
-    
-})
-
+  });
+});
